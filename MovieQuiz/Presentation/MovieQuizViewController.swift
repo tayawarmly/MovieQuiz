@@ -1,11 +1,6 @@
 import UIKit
 
 final class MovieQuizViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        show(quiz: convert(model: questions[currentQuestionIndex]))
-        setupUI()
-    }
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var textLabel: UILabel!
@@ -57,6 +52,12 @@ final class MovieQuizViewController: UIViewController {
             correctAnswer: false)
     ]
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        show(quiz: convert(model: questions[currentQuestionIndex]))
+        setupUI()
+    }
+    
     @IBAction private func noButtonClicked(_ sender: UIButton) {
         let currentQuestion = questions[currentQuestionIndex]
         let givenAnswer = false
@@ -74,18 +75,16 @@ final class MovieQuizViewController: UIViewController {
     private func setupUI() {
         imageView.layer.borderWidth = 8
         imageView.layer.cornerRadius = 20
-        imageView.layer.borderColor = UIColor.ypWhite.cgColor
+        imageView.layer.borderColor = UIColor.clear.cgColor
         imageView.contentMode = .scaleAspectFill
     }
     
     private func showAnswerResult(isCorrect: Bool) {
         if isCorrect {
-              correctAnswers += 1
-          }
+            correctAnswers += 1
+        }
         
         imageView.layer.masksToBounds = true
-        imageView.layer.borderWidth = 8
-        imageView.layer.cornerRadius = 20
         imageView.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
@@ -96,11 +95,13 @@ final class MovieQuizViewController: UIViewController {
     private func showNextQuestionOrResults() {
         if currentQuestionIndex == questions.count - 1 {
             let text = "Ваш результат: \(correctAnswers)/\(questions.count)"
-                  let viewModel = QuizResultViewModel(
-                      title: "Этот раунд окончен!",
-                      text: text,
-                      buttonText: "Сыграть ещё раз")
-                  show(quiz: viewModel)
+            let viewModel = QuizResultViewModel(
+                title: "Этот раунд окончен!",
+                text: text,
+                buttonText: "Сыграть ещё раз")
+            
+            setupUI()
+            show(quiz: viewModel)
         } else {
             currentQuestionIndex += 1
             
