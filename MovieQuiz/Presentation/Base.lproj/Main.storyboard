@@ -58,7 +58,7 @@
                                             <constraint firstAttribute="width" secondItem="if3-Ik-jut" secondAttribute="height" multiplier="2:3" id="Spn-Zz-ILn"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг этого фильма меньше, чем 6?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3L-AA-cYo" userLabel="Title Label">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Рейтинг этого фильма меньше, чем 7?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3L-AA-cYo" userLabel="Title Label">
                                         <rect key="frame" x="0.0" y="646" width="388" height="109"/>
                                         <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
                                         <color key="textColor" name="YP White"/>
@@ -118,6 +118,9 @@
                                     <constraint firstItem="WVV-13-xdo" firstAttribute="trailing" secondItem="gKM-2v-k3Q" secondAttribute="trailing" id="uSK-JX-yGc"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="j8D-5N-VB8">
+                                <rect key="frame" x="204" y="453" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black"/>
@@ -126,12 +129,17 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gKM-2v-k3Q" secondAttribute="bottom" id="HSA-9k-LZm"/>
                             <constraint firstItem="gKM-2v-k3Q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="RDi-XG-kNz"/>
                             <constraint firstItem="gKM-2v-k3Q" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="UHm-V9-W8Z"/>
+                            <constraint firstItem="j8D-5N-VB8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UZC-o3-WJg"/>
+                            <constraint firstItem="j8D-5N-VB8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kIJ-D5-Y9X"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="j8D-5N-VB8" id="PwB-BY-Dzk"/>
                         <outlet property="counterLabel" destination="5Ez-6w-Cbf" id="fkq-gB-n2X"/>
                         <outlet property="imageView" destination="if3-Ik-jut" id="whB-ic-NR9"/>
+                        <outlet property="noButton" destination="REA-lk-NLt" id="CKz-9e-Yuw"/>
                         <outlet property="textLabel" destination="K3L-AA-cYo" id="yfr-fE-AIL"/>
+                        <outlet property="yesButton" destination="rFd-fR-viW" id="aIs-Ko-4e0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
