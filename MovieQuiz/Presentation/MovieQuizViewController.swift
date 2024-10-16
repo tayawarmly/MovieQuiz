@@ -163,7 +163,6 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
     
     func showAlert(quiz: AlertModel) {
         alert?.presentAlert(quiz: quiz)
-        // questionFactory?.requestNextQuestion()
     }
     
     // MARK: - QuestionFactoryDelegate
