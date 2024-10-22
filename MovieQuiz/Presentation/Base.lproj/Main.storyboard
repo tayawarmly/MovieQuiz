@@ -39,6 +39,7 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ez-6w-Cbf" userLabel="Index Label">
                                                 <rect key="frame" x="194" y="0.0" width="194" height="24"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="Index"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="aMp-4D-hEf"/>
                                                 </constraints>
